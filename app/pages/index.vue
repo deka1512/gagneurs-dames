@@ -66,6 +66,62 @@ useSeoMeta({
       </div>
     </section>
 
+    <section class="pastor-section">
+      <div class="container pastor-layout">
+        <div class="pastor-portrait" aria-label="Présentation du Révérend Beni H. Kalala">
+          <span class="pastor-portrait-glow" />
+          <span class="pastor-initials">BK</span>
+          <span class="pastor-portrait-caption">FOI · SERVICE · MISSION</span>
+        </div>
+        <div class="pastor-content">
+          <span class="eyebrow">UN MOT SUR NOTRE RESPONSABLE SPIRITUEL</span>
+          <p class="pastor-overline">REPRÉSENTANT LÉGAL DE LA COMMUNAUTÉ</p>
+          <h2>Révérend <span>Beni H. Kalala</span></h2>
+          <p>
+            À la tête de la Communauté les Gagneurs d’Âmes en qualité de représentant légal,
+            le Révérend Beni H. Kalala est associé à une vision qui place l’Évangile,
+            la croissance spirituelle et le service au cœur de la vie communautaire.
+          </p>
+          <p>
+            Découvrez l’identité, les convictions et la mission de notre communauté,
+            et prenez part à cette dynamique de foi.
+          </p>
+          <NuxtLink to="/eglise" class="text-link">Découvrir notre communauté <i class="pi pi-arrow-up-right" /></NuxtLink>
+        </div>
+      </div>
+    </section>
+
+    <section class="vision-home-section">
+      <div class="container vision-home-inner">
+        <div class="vision-home-heading">
+          <span class="eyebrow eyebrow-light">NOTRE VISION</span>
+          <h2>Changer le monde <em>pour Christ.</em></h2>
+          <p>Une vision qui nous invite à vivre l’Évangile, à le partager avec conviction et à servir notre prochain avec amour.</p>
+          <NuxtLink to="/eglise" class="button button-light">Comprendre notre vision <i class="pi pi-arrow-up-right" /></NuxtLink>
+        </div>
+        <div class="vision-pillars">
+          <article>
+            <span>01</span>
+            <i class="pi pi-book" />
+            <h3>Annoncer la Parole</h3>
+            <p>Faire connaître le message de Jésus-Christ et encourager chacun à découvrir les Écritures.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <i class="pi pi-heart" />
+            <h3>Former des disciples</h3>
+            <p>Grandir dans la foi, développer une vie de prière et mettre la Parole en pratique.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <i class="pi pi-globe" />
+            <h3>Servir notre prochain</h3>
+            <p>Être une présence de compassion, d’espérance et de solidarité dans notre environnement.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section class="section">
       <div class="container intro-grid">
         <div>

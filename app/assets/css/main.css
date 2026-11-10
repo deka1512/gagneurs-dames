@@ -339,3 +339,47 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 .error-page p{max-width:470px;margin:0 0 25px;color:var(--ga-muted)}
 .article-eyebrow{display:block;margin-top:36px}
 .article-date{margin:-5px 0 35px;color:var(--ga-muted);font-size:12px}
+
+
+/* Full-bleed page reset: remove the browser's default outer page gutter */
+*,*::before,*::after{box-sizing:border-box}
+html,body,#__nuxt{width:100%;min-height:100%;margin:0}
+body{overflow-x:hidden}
+
+/* Homepage — pastoral presentation and vision */
+.pastor-section{position:relative;overflow:hidden;padding:clamp(65px,8vw,108px) 0;background:#f5f8fa}
+.pastor-layout{display:grid;grid-template-columns:minmax(260px,.82fr) 1.18fr;align-items:center;gap:clamp(38px,7vw,92px)}
+.pastor-portrait{position:relative;min-height:430px;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;border-radius:14px;color:#fff;background:linear-gradient(145deg,#102b40,#3976a8)}
+.pastor-portrait:before,.pastor-portrait:after{position:absolute;content:'';border:1px solid #ffffff24;border-radius:50%}
+.pastor-portrait:before{width:330px;height:330px}
+.pastor-portrait:after{width:440px;height:440px}
+.pastor-portrait-glow{position:absolute;width:230px;height:230px;border-radius:50%;background:#ffffff12;filter:blur(2px)}
+.pastor-initials{position:relative;z-index:1;color:#fff;font-family:'Urbanist',sans-serif;font-size:clamp(100px,13vw,160px);font-weight:800;letter-spacing:-.08em;line-height:1}
+.pastor-portrait-caption{position:absolute;bottom:28px;color:#ffffffb8;font-size:9px;font-weight:900;letter-spacing:.2em}
+.pastor-content{max-width:650px}
+.pastor-overline{margin:19px 0 8px;color:var(--ga-coral);font-size:10px;font-weight:900;letter-spacing:.14em}
+.pastor-content h2{margin:0 0 20px;color:var(--ga-navy);font-size:clamp(36px,4.5vw,56px);line-height:1.05}
+.pastor-content h2 span{color:var(--ga-coral)}
+.pastor-content>p:not(.pastor-overline){color:var(--ga-muted);font-size:15px;line-height:1.9}
+.vision-home-section{padding:clamp(65px,8vw,105px) 0;color:#fff;background:linear-gradient(125deg,#102b40,#1d4c6d)}
+.vision-home-inner{display:grid;grid-template-columns:.85fr 1.15fr;align-items:center;gap:clamp(40px,7vw,90px)}
+.vision-home-heading h2{max-width:520px;margin:17px 0;color:#fff;font-size:clamp(40px,5vw,62px);line-height:1.02}
+.vision-home-heading h2 em{color:var(--ga-coral-soft);font-style:normal}
+.vision-home-heading>p{max-width:460px;margin-bottom:26px;color:#ffffffc4;line-height:1.85}
+.vision-pillars{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
+.vision-pillars article{min-height:240px;padding:22px 18px;border:1px solid #ffffff24;border-radius:12px;background:#ffffff09}
+.vision-pillars article>span{display:block;color:#ffffff6b;font-family:'Urbanist',sans-serif;font-size:25px;font-weight:800}
+.vision-pillars article>i{display:block;margin:19px 0 13px;color:var(--ga-coral-soft);font-size:23px}
+.vision-pillars h3{margin:0 0 9px;color:#fff;font-size:17px;line-height:1.2}
+.vision-pillars p{margin:0;color:#ffffffad;font-size:12px;line-height:1.75}
+@media(max-width:900px){
+  .pastor-layout,.vision-home-inner{grid-template-columns:1fr;gap:34px}
+  .pastor-portrait{min-height:340px}
+  .vision-pillars{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media(max-width:600px){
+  .pastor-portrait{min-height:280px}
+  .vision-pillars{grid-template-columns:1fr}
+  .vision-pillars article{min-height:0;padding:21px}
+  .vision-pillars article>i{margin:12px 0}
+}
