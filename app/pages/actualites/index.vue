@@ -1,2 +1,69 @@
-<script setup lang="ts">const {getPosts,available}=useWordPress();const {data:posts}=await useAsyncData('news',()=>getPosts({per_page:12}));useSeoMeta({title:'Actualités | Gagneurs d’Âmes'})</script>
-<template><div><section class="page-hero"><div class="container"><span class="eyebrow eyebrow-light">LA VIE DE L’ÉGLISE</span><h1>Actualités &<br><em>temps forts.</em></h1><p>Suivez les nouvelles, les rencontres et les événements de notre communauté.</p></div></section><section class="section"><div class="container"><SectionHeading eyebrow="À LA UNE" title="Les dernières nouvelles"/><div v-if="posts?.length" class="card-grid"><article v-for="p in posts" :key="p.id" class="content-card"><div class="card-content"><span class="card-meta">{{new Date(p.date).toLocaleDateString('fr-FR')}}</span><h3>{{p.title.rendered.replace(/<[^>]*>/g,'')}}</h3><p>{{p.excerpt.rendered.replace(/<[^>]*>/g,'').slice(0,145)}}</p><NuxtLink :to="'/actualites/'+p.slug" class="text-link">Lire la suite <i class="pi pi-arrow-up-right"/></NuxtLink></div></article></div><div v-else class="empty-editorial"><i class="pi pi-calendar"/><h3>Les actualités arrivent bientôt</h3><p>{{available?'Aucune actualité publiée pour le moment.':'La connexion WordPress sera configurée prochainement.'}}</p></div></div></section></div></template>
+<script setup lang="ts">
+const { getPosts, available } = useWordPress()
+const { data: posts } = await useAsyncData('news', () => getPosts({ per_page: 12 }))
+
+const demoNews = [
+  { slug: 'grandir-ensemble', date: '2026-10-25', category: 'Vie communautaire', title: 'Grandir ensemble dans la foi', excerpt: 'Un temps de partage, de prière et d’encouragement pour fortifier notre marche avec Dieu et apprendre à nous soutenir les uns les autres.' },
+  { slug: 'parole-et-vie', date: '2026-10-18', category: 'Enseignement', title: 'La Parole au cœur de nos vies', excerpt: 'Retour sur un moment consacré à la découverte des Écritures et à leur mise en pratique dans les choix de chaque jour.' },
+  { slug: 'dimanche-de-communion', date: '2026-10-11', category: 'Célébration', title: 'Un dimanche de communion', excerpt: 'Une célébration autour de la reconnaissance, de la fraternité et de l’espérance qui nous rassemble.' },
+  { slug: 'servir-avec-amour', date: '2026-10-04', category: 'Engagement', title: 'Servir avec amour, simplement', excerpt: 'Parce que la foi se traduit aussi par des gestes concrets, nous voulons encourager chacun à être attentif à son prochain.' },
+  { slug: 'un-temps-pour-prier', date: '2026-09-27', category: 'Vie spirituelle', title: 'Un temps pour prier ensemble', excerpt: 'La prière nous rassemble, nous fortifie et nous aide à porter ensemble les joies comme les préoccupations.' },
+  { slug: 'accueillir-et-accompagner', date: '2026-09-20', category: 'Communauté', title: 'Accueillir et accompagner', excerpt: 'Une communauté grandit lorsque chacun peut être écouté, encouragé et accompagné avec bienveillance.' },
+]
+const dateLabel = (date: string) => new Intl.DateTimeFormat('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' }).format(new Date(date))
+useSeoMeta({ title: 'Actualités | Gagneurs d’Âmes', description: 'Les nouvelles, rencontres et temps forts de la Communauté les Gagneurs d’Âmes.' })
+</script>
+
+<template>
+  <div>
+    <section class="page-hero page-hero-news">
+      <div class="container page-hero-content">
+        <span class="eyebrow eyebrow-light">LA VIE DE LA COMMUNAUTÉ</span>
+        <h1>Des nouvelles qui<br><em>nous rapprochent.</em></h1>
+        <p>Rencontres, enseignements, initiatives et moments de partage : suivez la vie de notre communauté.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="listing-intro">
+          <div><span class="eyebrow">LE JOURNAL DE LA COMMUNAUTÉ</span><h2>À la une</h2></div>
+          <p>Des nouvelles pour rester connectés à ce qui se vit et se construit ensemble.</p>
+        </div>
+
+        <article v-if="posts?.length" class="featured-article">
+          <div class="featured-article-art"><span><i class="pi pi-megaphone" /> ACTUALITÉ</span></div>
+          <div class="featured-article-copy">
+            <span class="card-meta">{{ dateLabel(posts[0]!.date) }}</span>
+            <h3>{{ posts[0]!.title.rendered.replace(/<[^>]*>/g, '') }}</h3>
+            <p>{{ posts[0]!.excerpt.rendered.replace(/<[^>]*>/g, '').slice(0, 220) }}</p>
+            <NuxtLink :to="'/actualites/' + posts[0]!.slug" class="text-link">Lire l'article <i class="pi pi-arrow-up-right" /></NuxtLink>
+          </div>
+        </article>
+        <article v-else class="featured-article">
+          <div class="featured-article-art"><span><i class="pi pi-heart" /> VIE COMMUNAUTAIRE</span></div>
+          <div class="featured-article-copy">
+            <span class="card-meta">Édition de démonstration · 25 octobre 2026</span>
+            <h3>Grandir ensemble dans la foi</h3>
+            <p>La vie de la communauté se construit dans les rencontres, l’écoute et l’encouragement mutuel. Découvrez les thèmes qui nous rassemblent et les engagements qui nous inspirent.</p>
+            <span class="text-link">Un exemple de publication éditoriale</span>
+          </div>
+        </article>
+
+        <div class="editorial-grid">
+          <article v-for="(item, index) in (posts?.length ? posts.slice(1) : demoNews.slice(1))" :key="posts?.length ? item.id : item.slug" class="news-card">
+            <div class="news-card-art" :class="'news-art-' + (index % 4)"><span>{{ posts?.length ? 'ACTUALITÉ' : item.category }}</span><i :class="['pi pi-book-open', 'pi pi-users', 'pi pi-sun', 'pi pi-heart'][index % 4]" /></div>
+            <div class="news-card-copy">
+              <span class="card-meta">{{ dateLabel(item.date) }}</span>
+              <h3>{{ item.title.rendered ? item.title.rendered.replace(/<[^>]*>/g, '') : item.title }}</h3>
+              <p>{{ item.excerpt.rendered ? item.excerpt.rendered.replace(/<[^>]*>/g, '').slice(0, 155) : item.excerpt }}</p>
+              <NuxtLink v-if="posts?.length" :to="'/actualites/' + item.slug" class="text-link">Lire la suite <i class="pi pi-arrow-up-right" /></NuxtLink>
+              <span v-else class="card-demo-label">Contenu fictif</span>
+            </div>
+          </article>
+        </div>
+        <p class="content-source-note"><i class="pi pi-info-circle" /> {{ available ? 'Publications chargées depuis WordPress. La séparation par catégorie éditoriale reste à configurer.' : 'Publications fictives destinées à présenter la mise en page. Elles seront remplacées par les contenus officiels.' }}</p>
+      </div>
+    </section>
+  </div>
+</template>
