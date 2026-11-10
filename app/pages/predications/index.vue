@@ -9,6 +9,10 @@ const demoSermons = [
   { slug: 'esperance-dans-lepreuve', date: '2026-10-04', title: 'Garder l’espérance dans l’épreuve', speaker: 'Équipe pastorale · exemple', reference: 'Romains 12:12', excerpt: 'Comment garder les yeux tournés vers Dieu et demeurer dans l’espérance lorsque le chemin devient difficile.' },
 ]
 const dateLabel = (date: string) => new Intl.DateTimeFormat('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' }).format(new Date(date))
+const clean = (value: string) => value.replace(/<[^>]*>/g, '').trim()
+const sermons = computed(() => posts.value?.length
+  ? posts.value.map(post => ({ slug: post.slug, date: post.date, title: clean(post.title.rendered), excerpt: clean(post.excerpt.rendered).slice(0, 180), speaker: '', reference: '', demo: false }))
+  : demoSermons.map(item => ({ ...item, demo: true })))
 useSeoMeta({ title: 'Prédications | Gagneurs d’Âmes', description: 'Messages bibliques et enseignements pour nourrir votre foi et approfondir la Parole.' })
 </script>
 
@@ -30,13 +34,13 @@ useSeoMeta({ title: 'Prédications | Gagneurs d’Âmes', description: 'Messages
         </div>
 
         <div class="sermon-list">
-          <article v-for="(item, index) in (posts?.length ? posts : demoSermons)" :key="posts?.length ? item.id : item.slug" class="sermon-row">
+          <article v-for="(item, index) in sermons" :key="item.slug" class="sermon-row">
             <div class="sermon-number">{{ String(index + 1).padStart(2, '0') }}</div>
             <div class="sermon-main">
-              <span class="card-meta">{{ dateLabel(item.date) }} <template v-if="!posts?.length"> · {{ item.reference }}</template></span>
-              <h3>{{ posts?.length ? item.title.rendered.replace(/<[^>]*>/g, '') : item.title }}</h3>
-              <p>{{ posts?.length ? item.excerpt.rendered.replace(/<[^>]*>/g, '').slice(0, 180) : item.excerpt }}</p>
-              <span v-if="!posts?.length" class="sermon-speaker">{{ item.speaker }}</span>
+              <span class="card-meta">{{ dateLabel(item.date) }} <template v-if="item.demo"> · {{ item.reference }}</template></span>
+              <h3>{{ item.title }}</h3>
+              <p>{{ item.excerpt }}</p>
+              <span v-if="item.demo" class="sermon-speaker">{{ item.speaker }}</span>
               <NuxtLink v-else :to="'/predications/' + item.slug" class="text-link">Lire l'enseignement <i class="pi pi-arrow-up-right" /></NuxtLink>
             </div>
             <div class="sermon-action"><i class="pi pi-book-open" /></div>

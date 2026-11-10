@@ -10,7 +10,12 @@ const demoNews = [
   { slug: 'un-temps-pour-prier', date: '2026-09-27', category: 'Vie spirituelle', title: 'Un temps pour prier ensemble', excerpt: 'La prière nous rassemble, nous fortifie et nous aide à porter ensemble les joies comme les préoccupations.' },
   { slug: 'accueillir-et-accompagner', date: '2026-09-20', category: 'Communauté', title: 'Accueillir et accompagner', excerpt: 'Une communauté grandit lorsque chacun peut être écouté, encouragé et accompagné avec bienveillance.' },
 ]
+const clean = (value: string) => value.replace(/<[^>]*>/g, '').trim()
 const dateLabel = (date: string) => new Intl.DateTimeFormat('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' }).format(new Date(date))
+const featuredPost = computed(() => posts.value?.[0] ?? null)
+const articles = computed(() => posts.value?.length
+  ? posts.value.slice(1).map(post => ({ slug: post.slug, date: post.date, title: clean(post.title.rendered), excerpt: clean(post.excerpt.rendered).slice(0, 155), category: 'Actualité', demo: false }))
+  : demoNews.slice(1).map(item => ({ ...item, demo: true })))
 useSeoMeta({ title: 'Actualités | Gagneurs d’Âmes', description: 'Les nouvelles, rencontres et temps forts de la Communauté les Gagneurs d’Âmes.' })
 </script>
 
@@ -31,13 +36,13 @@ useSeoMeta({ title: 'Actualités | Gagneurs d’Âmes', description: 'Les nouvel
           <p>Des nouvelles pour rester connectés à ce qui se vit et se construit ensemble.</p>
         </div>
 
-        <article v-if="posts?.length" class="featured-article">
+        <article v-if="featuredPost" class="featured-article">
           <div class="featured-article-art"><span><i class="pi pi-megaphone" /> ACTUALITÉ</span></div>
           <div class="featured-article-copy">
-            <span class="card-meta">{{ dateLabel(posts[0]!.date) }}</span>
-            <h3>{{ posts[0]!.title.rendered.replace(/<[^>]*>/g, '') }}</h3>
-            <p>{{ posts[0]!.excerpt.rendered.replace(/<[^>]*>/g, '').slice(0, 220) }}</p>
-            <NuxtLink :to="'/actualites/' + posts[0]!.slug" class="text-link">Lire l'article <i class="pi pi-arrow-up-right" /></NuxtLink>
+            <span class="card-meta">{{ dateLabel(featuredPost.date) }}</span>
+            <h3>{{ clean(featuredPost.title.rendered) }}</h3>
+            <p>{{ clean(featuredPost.excerpt.rendered).slice(0, 220) }}</p>
+            <NuxtLink :to="'/actualites/' + featuredPost.slug" class="text-link">Lire l'article <i class="pi pi-arrow-up-right" /></NuxtLink>
           </div>
         </article>
         <article v-else class="featured-article">
@@ -46,18 +51,18 @@ useSeoMeta({ title: 'Actualités | Gagneurs d’Âmes', description: 'Les nouvel
             <span class="card-meta">Édition de démonstration · 25 octobre 2026</span>
             <h3>Grandir ensemble dans la foi</h3>
             <p>La vie de la communauté se construit dans les rencontres, l’écoute et l’encouragement mutuel. Découvrez les thèmes qui nous rassemblent et les engagements qui nous inspirent.</p>
-            <span class="text-link">Un exemple de publication éditoriale</span>
+            <span class="card-demo-label">Exemple de publication éditoriale</span>
           </div>
         </article>
 
         <div class="editorial-grid">
-          <article v-for="(item, index) in (posts?.length ? posts.slice(1) : demoNews.slice(1))" :key="posts?.length ? item.id : item.slug" class="news-card">
-            <div class="news-card-art" :class="'news-art-' + (index % 4)"><span>{{ posts?.length ? 'ACTUALITÉ' : item.category }}</span><i :class="['pi pi-book-open', 'pi pi-users', 'pi pi-sun', 'pi pi-heart'][index % 4]" /></div>
+          <article v-for="(item, index) in articles" :key="item.slug" class="news-card">
+            <div class="news-card-art" :class="'news-art-' + (index % 4)"><span>{{ item.category }}</span><i :class="['pi pi-book-open', 'pi pi-users', 'pi pi-sun', 'pi pi-heart'][index % 4]" /></div>
             <div class="news-card-copy">
               <span class="card-meta">{{ dateLabel(item.date) }}</span>
-              <h3>{{ item.title.rendered ? item.title.rendered.replace(/<[^>]*>/g, '') : item.title }}</h3>
-              <p>{{ item.excerpt.rendered ? item.excerpt.rendered.replace(/<[^>]*>/g, '').slice(0, 155) : item.excerpt }}</p>
-              <NuxtLink v-if="posts?.length" :to="'/actualites/' + item.slug" class="text-link">Lire la suite <i class="pi pi-arrow-up-right" /></NuxtLink>
+              <h3>{{ item.title }}</h3>
+              <p>{{ item.excerpt }}</p>
+              <NuxtLink v-if="!item.demo" :to="'/actualites/' + item.slug" class="text-link">Lire la suite <i class="pi pi-arrow-up-right" /></NuxtLink>
               <span v-else class="card-demo-label">Contenu fictif</span>
             </div>
           </article>
