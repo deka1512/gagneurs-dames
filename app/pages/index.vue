@@ -40,7 +40,7 @@ useSeoMeta({
     <section class="hero">
       <div class="hero-image" />
       <div class="container hero-content">
-        <span class="hero-kicker"><i class="pi pi-sparkles" /> BIENVENUE DANS NOTRE COMMUNAUTÉ</span>
+        <span class="hero-kicker"><i class="pi pi-sun" /> BIENVENUE DANS NOTRE COMMUNAUTÉ</span>
         <h1>Une foi vivante.<br><em>Des vies transformées.</em></h1>
         <p>
           Un lieu pour rencontrer Dieu, découvrir la Parole, grandir ensemble
@@ -98,7 +98,7 @@ useSeoMeta({
         </div>
         <div v-else class="card-grid">
           <article v-for="item in demoNews" :key="item.slug" class="content-card editorial-card">
-            <div class="editorial-card-top"><span>{{ item.category }}</span><i class="pi pi-book-open" /></div>
+            <div class="editorial-card-top"><span>{{ item.category }}</span><i class="pi pi-book" /></div>
             <div class="card-content">
               <span class="card-meta">{{ dateLabel(item.date) }}</span>
               <h3>{{ item.title }}</h3>
