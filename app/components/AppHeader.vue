@@ -1,0 +1,6 @@
+<script setup lang="ts">
+const opened=ref(false), route=useRoute()
+const links=[{label:'Accueil',to:'/'},{label:'L’église',to:'/eglise'},{label:'Prédications',to:'/predications'},{label:'Actualités',to:'/actualites'},{label:'Contact',to:'/contact'}]
+watch(()=>route.fullPath,()=>opened.value=false)
+</script>
+<template><header class="site-header"><div class="container header-inner"><NuxtLink to="/" class="brand"><span class="brand-mark"><i class="pi pi-sun"/></span><span><strong>GAGNEURS D’ÂMES</strong><small>COMMUNAUTÉ</small></span></NuxtLink><nav class="desktop-nav"><NuxtLink v-for="l in links" :key="l.to" :to="l.to" :class="{active:route.path===l.to}">{{l.label}}</NuxtLink></nav><NuxtLink to="/rendez-vous" class="button button-primary header-cta">Prendre rendez-vous <i class="pi pi-arrow-up-right"/></NuxtLink><button class="mobile-toggle" aria-label="Menu" :aria-expanded="opened" @click="opened=!opened"><i :class="opened?'pi pi-times':'pi pi-bars'"/></button></div><Transition name="menu"><nav v-if="opened" class="mobile-nav container"><NuxtLink v-for="l in links" :key="l.to" :to="l.to">{{l.label}}</NuxtLink><NuxtLink to="/rendez-vous" class="button button-primary">Prendre rendez-vous</NuxtLink></nav></Transition></header></template>

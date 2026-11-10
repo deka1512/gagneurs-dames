@@ -1,0 +1,1 @@
+<script setup lang="ts">defineProps<{error:{statusCode?:number;statusMessage?:string;message?:string}}>()</script><template><div class="error-page"><span class="eyebrow">OUPS</span><h1>{{error.statusCode||500}}</h1><h2>{{error.statusMessage||'Une erreur est survenue.'}}</h2><NuxtLink to="/" class="button button-primary">Retour à l’accueil</NuxtLink></div></template>
