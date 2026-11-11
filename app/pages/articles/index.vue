@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { articles } from '~/data/articles'
 
-const featuredArticle = articles[0]
+const featuredArticle = articles[0]!
 const otherArticles = articles.slice(1)
 const dateLabel = (date: string) => new Intl.DateTimeFormat('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' }).format(new Date(date))
 
