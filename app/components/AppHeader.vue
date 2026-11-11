@@ -39,7 +39,7 @@ onBeforeUnmount(() => window.removeEventListener('keydown', closeOnEscape))
 
     <div class="container header-inner">
       <NuxtLink to="/" class="brand" aria-label="Gagneurs d’Âmes, accueil">
-        <img class="brand-logo" src="/logo.svg" alt="">
+        <img class="brand-logo" src="/logo.jpg" alt="Logo Gagneurs d’Âmes">
         <span class="brand-copy">
           <strong>GAGNEURS D’ÂMES</strong>
           <small>COMMUNAUTÉ · FOI · MISSION</small>

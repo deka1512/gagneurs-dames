@@ -4,7 +4,7 @@ import { leadershipPreview } from '~/data/leadership'
 
 const featuredArticles = articles.slice(0, 3)
 const pastorPortraitFailed = ref(false)
-const pastorPortraitSrc = '/images/benih.jpg'
+const pastorPortraitSrc = '/beni%20h.jpg'
 const dateLabel = (date: string) =>
   new Intl.DateTimeFormat('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' }).format(new Date(date))
 
