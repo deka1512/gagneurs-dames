@@ -143,7 +143,7 @@ useSeoMeta({
 
     <section class="section section-soft">
       <div class="container">
-        <SectionHeading eyebrow="LA VIE DE LA COMMUNAUTÉ" title="Grandir, apprendre et partager" description="Retrouvez les nouvelles, les rencontres et les enseignements qui rythment la vie de notre communauté." />
+        <SectionHeading eyebrow="LA VIE DE LA COMMUNAUTÉ" title="Grandir, apprendre et partager" description="Retrouvez les actualités, les rencontres et les enseignements qui rythment la vie de notre communauté." />
         <div class="card-grid">
           <article v-for="item in featuredArticles" :key="item.slug" class="content-card editorial-card">
             <div class="editorial-card-image">
@@ -154,11 +154,11 @@ useSeoMeta({
               <span class="card-meta">{{ dateLabel(item.publishedAt) }}</span>
               <h3>{{ item.title }}</h3>
               <p>{{ item.excerpt }}</p>
-              <NuxtLink :to="'/articles/' + item.slug" class="text-link">Lire l’article <i class="pi pi-arrow-up-right" /></NuxtLink>
+              <NuxtLink :to="'/articles/' + item.slug" class="text-link">Lire la publication <i class="pi pi-arrow-up-right" /></NuxtLink>
             </div>
           </article>
         </div>
-        <div class="section-action"><NuxtLink to="/articles" class="button button-outline">Tous les articles <i class="pi pi-arrow-right" /></NuxtLink></div>
+        <div class="section-action"><NuxtLink to="/articles" class="button button-outline">Toutes les actualités <i class="pi pi-arrow-right" /></NuxtLink></div>
       </div>
     </section>
 
