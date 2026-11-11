@@ -13,6 +13,7 @@ const mapUrl = 'https://www.google.com/maps/search/?api=1&query=Avenue%20Kisanga
 <template>
   <div class="contact-page">
     <section class="page-hero contact-hero">
+      <div class="contact-hero-visual" aria-hidden="true"><img src="/section%20eglise.jpg" alt="" fetchpriority="high"></div>
       <div class="container contact-hero-content">
         <span class="eyebrow eyebrow-light">RESTONS EN CONTACT</span>
         <h1>Nous serions heureux<br><em>de vous rencontrer.</em></h1>
