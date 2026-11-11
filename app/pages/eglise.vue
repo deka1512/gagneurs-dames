@@ -37,7 +37,7 @@ const commitments = [
     <section class="section">
       <div class="container story-grid">
         <div class="story-visual">
-          <div class="story-visual-image" role="img" aria-label="Lumière traversant les fenêtres d'un lieu de rassemblement" />
+          <img src="/section%20eglise.jpg" class="story-visual-image" alt="Lumière traversant les fenêtres d'un lieu de rassemblement">
           <div class="story-quote"><i class="pi pi-quote-left" /><p>« Que tout ce que vous faites se fasse avec amour. »</p><span>1 Corinthiens 16:14</span></div>
         </div>
         <div class="story-copy">
