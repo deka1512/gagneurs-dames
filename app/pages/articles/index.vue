@@ -13,7 +13,7 @@ useSeoMeta({
 
 <template>
   <div>
-    <section class="page-hero page-hero-news">
+    <section class="page-hero page-hero-articles">
       <div class="container page-hero-content">
         <span class="eyebrow eyebrow-light">ACTUALITÉS & RÉFLEXIONS</span>
         <h1>Des paroles pour<br><em>nourrir la foi.</em></h1>
