@@ -32,7 +32,7 @@ useSeoMeta({
   <div class="appointment-page">
     <section class="page-hero appointment-hero">
       <div class="appointment-hero-visual" aria-hidden="true">
-        <img src="/section%20eglise.jpg" alt="" fetchpriority="high">
+        <img src="/couple%20pastoral.jpg" alt="" fetchpriority="high">
       </div>
       <div class="container appointment-hero-content">
         <span class="eyebrow eyebrow-light">NOUS SOMMES À VOTRE ÉCOUTE</span>
