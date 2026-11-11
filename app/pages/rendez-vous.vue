@@ -51,7 +51,7 @@ useSeoMeta({
           <p>Présentez-nous brièvement votre besoin. Vous pourrez préciser le motif de votre demande et le moment qui vous conviendrait.</p>
           <div class="appointment-assurances">
             <div><i class="pi pi-heart" /><span><strong>Une écoute bienveillante</strong><small>Votre démarche est accueillie avec respect.</small></span></div>
-            <div><i class="pi pi-pray" /><span><strong>Un temps de prière</strong><small>Partagez une intention ou un sujet de prière.</small></span></div>
+            <div><i class="pi pi-heart" /><span><strong>Un temps de prière</strong><small>Partagez une intention ou un sujet de prière.</small></span></div>
             <div><i class="pi pi-calendar" /><span><strong>Une rencontre à organiser</strong><small>La date sera confirmée avec vous.</small></span></div>
           </div>
         </div>
