@@ -4,6 +4,7 @@ import { leadershipPreview } from '~/data/leadership'
 
 const featuredArticles = articles.slice(0, 3)
 const pastorPortraitFailed = ref(false)
+const pastorPortraitSrc = '/images/benih.jpg'
 const dateLabel = (date: string) =>
   new Intl.DateTimeFormat('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' }).format(new Date(date))
 
@@ -50,7 +51,7 @@ useSeoMeta({
           <img
             v-if="!pastorPortraitFailed"
             class="pastor-portrait-image"
-            src="/images/benih.jpg"
+             :src="pastorPortraitSrc"
             alt="Portrait du Révérend Beni H. Kalala"
             loading="lazy"
             @error="pastorPortraitFailed = true"
