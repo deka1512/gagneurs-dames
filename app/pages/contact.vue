@@ -6,6 +6,7 @@ useSeoMeta({
 
 const address = 'Avenue Kisangani, n° 31 Bis, quartier Makelele, commune de Bandalungwa, référence Virage Assolongo, Kinshasa, République démocratique du Congo'
 const phone = '0812356892'
+const email = 'contact@cga.com'
 const mapUrl = 'https://www.google.com/maps/search/?api=1&query=Avenue%20Kisangani%20n%C2%B031%20Bis%2C%20Makelele%2C%20Bandalungwa%2C%20Kinshasa%2C%20RDC'
 </script>
 
@@ -34,6 +35,10 @@ const mapUrl = 'https://www.google.com/maps/search/?api=1&query=Avenue%20Kisanga
             <i class="pi pi-phone" />
             <div><strong>Téléphone</strong><a :href="`tel:${phone}`">{{ phone }}</a></div>
           </div>
+          <div class="contact-detail">
+            <i class="pi pi-envelope" />
+            <div><strong>Adresse e-mail</strong><a :href="`mailto:${email}`">{{ email }}</a></div>
+          </div>
           <a :href="mapUrl" target="_blank" rel="noopener noreferrer" class="button button-primary contact-map-button">
             Voir l’itinéraire <i class="pi pi-directions" />
           </a>
@@ -55,11 +60,13 @@ const mapUrl = 'https://www.google.com/maps/search/?api=1&query=Avenue%20Kisanga
         <aside class="contact-panel">
           <span class="eyebrow">NOUS VOUS ÉCOUTONS</span>
           <h3>Votre message compte.</h3>
-          <p>Vous souhaitez demander une prière, poser une question ou organiser une rencontre ? Appelez-nous ou retrouvez-nous sur nos plateformes.</p>
+          <p>Vous souhaitez demander une prière, poser une question ou organiser une rencontre ? Appelez-nous ou écrivez-nous.</p>
           <div class="contact-panel-item"><span>Appel téléphonique</span><a href="tel:0812356892">081 235 68 92</a></div>
+          <div class="contact-panel-item"><span>Courrier électronique</span><a :href="`mailto:${email}`">{{ email }}</a></div>
           <div class="contact-panel-item"><span>Prédications</span><strong>Chaîne YouTube</strong></div>
           <div class="contact-panel-item"><span>Informations</span><strong>Page Facebook</strong></div>
           <a href="tel:0812356892" class="button button-primary"><i class="pi pi-phone" /> Nous appeler</a>
+          <a :href="`mailto:${email}`" class="button button-outline"><i class="pi pi-envelope" /> Nous écrire</a>
           <a href="https://www.youtube.com/@BeniHamuli" target="_blank" rel="noopener noreferrer" class="button button-outline">
             Voir les prédications <i class="pi pi-youtube" />
           </a>
