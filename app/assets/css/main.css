@@ -697,3 +697,78 @@ a:not(.button):not(.footer-credit):hover { color: inherit !important; }
   .appointment-hero { min-height: 390px; padding-block: 45px; }
   .appointment-hero p { font-size: 15px; }
 }
+
+
+/* Heroes plein cadre : photo locale sur toute la section, voile dégradé au-dessus.
+   Les photos d'accueil et de la page Église restent inchangées. */
+.page-hero {
+  position: relative;
+  isolation: isolate;
+  min-height: 470px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background-color: #102b40;
+}
+.page-hero::before {
+  position: absolute;
+  z-index: -2;
+  inset: 0;
+  content: '';
+  opacity: 1;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.page-hero::after {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  content: '';
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(8, 27, 42, .92) 0%, rgba(12, 39, 58, .78) 42%, rgba(12, 39, 58, .26) 100%),
+    linear-gradient(0deg, rgba(8, 27, 42, .30) 0%, transparent 58%);
+}
+.page-hero-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding-block: clamp(82px, 10vw, 126px);
+}
+.page-hero-contact::before { background-image: url('/chuch.jpg'); background-position: center 48%; }
+.page-hero-appointment::before { background-image: url('/couple%20pastoral.jpg'); background-position: center 38%; }
+.page-hero-news::before { background-image: url('/bg%201.jpg'); background-position: center 28%; }
+.page-hero-articles::before { background-image: url('/responsable%20louange.jpg'); background-position: center 28%; }
+.page-hero-sermons::before { background-image: url('/section%20predication.jpg'); background-position: center 44%; }
+
+.page-hero.contact-hero,
+.page-hero.appointment-hero {
+  min-height: 470px;
+  padding-block: 0;
+  background-image: none;
+}
+.contact-hero-visual,
+.appointment-hero-visual { display: none; }
+.page-hero.contact-hero::after,
+.page-hero.appointment-hero::after {
+  background:
+    linear-gradient(90deg, rgba(8, 27, 42, .92) 0%, rgba(12, 39, 58, .78) 42%, rgba(12, 39, 58, .26) 100%),
+    linear-gradient(0deg, rgba(8, 27, 42, .30) 0%, transparent 58%);
+}
+.page-hero.contact-hero .contact-hero-content,
+.page-hero.appointment-hero .appointment-hero-content {
+  position: relative;
+  z-index: 1;
+  padding-block: clamp(82px, 10vw, 126px);
+}
+@media (max-width: 650px) {
+  .page-hero { min-height: 410px; }
+  .page-hero::after {
+    background:
+      linear-gradient(90deg, rgba(8, 27, 42, .88) 0%, rgba(12, 39, 58, .66) 68%, rgba(12, 39, 58, .35) 100%),
+      linear-gradient(0deg, rgba(8, 27, 42, .34), transparent 68%);
+  }
+  .page-hero.contact-hero,
+  .page-hero.appointment-hero { min-height: 410px; }
+}
