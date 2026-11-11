@@ -797,3 +797,28 @@ a:not(.button):not(.footer-credit):hover { color: inherit !important; }
 .page-hero.appointment-hero .appointment-hero-content {
   z-index: 1;
 }
+
+
+/* Ajustements ciblés des héros demandés */
+.page-hero-church .page-hero-content {
+  padding-block: clamp(64px, 7.5vw, 96px);
+}
+.page-hero-sermons .page-hero-content,
+.page-hero-news .page-hero-content {
+  padding-block: clamp(68px, 8vw, 104px);
+}
+.page-hero-sermons .page-hero-photo,
+.page-hero-news .page-hero-photo {
+  object-fit: cover;
+}
+.page-hero-news::before {
+  background-image: url('/chuch.jpg');
+  background-position: center 48%;
+}
+@media (max-width: 650px) {
+  .page-hero-church .page-hero-content,
+  .page-hero-sermons .page-hero-content,
+  .page-hero-news .page-hero-content {
+    padding-block: 58px;
+  }
+}
