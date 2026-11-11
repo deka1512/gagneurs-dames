@@ -4,7 +4,7 @@ const year = new Date().getFullYear()
 const exploreLinks = [
   { label: 'Notre église', to: '/eglise' },
   { label: 'Prédications', to: '/predications' },
-  { label: 'Articles', to: '/articles' },
+  { label: 'Actualités', to: '/articles' },
   { label: 'Prendre rendez-vous', to: '/rendez-vous' },
 ]
 
@@ -44,6 +44,7 @@ const mapUrl = 'https://www.google.com/maps/search/?api=1&query=Avenue%20Kisanga
         <div class="footer-column footer-contact">
           <h2>Nous trouver</h2>
           <p><i class="pi pi-map-marker" /><span>{{ address }}</span></p>
+          <a href="tel:0812356892"><i class="pi pi-phone" /><span>081 235 68 92</span></a>
           <a :href="mapUrl" target="_blank" rel="noopener noreferrer"><i class="pi pi-directions" /><span>Ouvrir l’itinéraire</span></a>
           <a href="https://web.facebook.com/benihkalala?locale=fr_FR" target="_blank" rel="noopener noreferrer"><i class="pi pi-facebook" /><span>Notre page Facebook</span></a>
           <a href="https://www.youtube.com/@BeniHamuli" target="_blank" rel="noopener noreferrer"><i class="pi pi-youtube" /><span>Nos prédications sur YouTube</span></a>
