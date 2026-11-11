@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { pastoralCollege, pastoralTeam, collaborators } from '~/data/leadership'
 useSeoMeta({
   title: 'Notre église | Communauté les Gagneurs d’Âmes',
   description: 'Découvrez la communauté, les convictions et les engagements qui inspirent la Communauté les Gagneurs d’Âmes.',
@@ -60,6 +61,48 @@ const commitments = [
             <p>{{ value.text }}</p>
           </article>
         </div>
+      </div>
+    </section>
+
+    <section id="leadership" class="section leadership-section section-soft">
+      <div class="container">
+        <SectionHeading
+          eyebrow="LEADERSHIP & SERVICE"
+          title="Des équipes au service de la vision"
+          description="Une organisation présentée autour du collège pastoral, de l’équipe pastorale et des collaborateurs qui participent à la mission."
+        />
+
+        <div class="leadership-group">
+          <div class="leadership-group-heading">
+            <span class="eyebrow">ORIENTATION & ACCOMPAGNEMENT</span>
+            <h3>Le collège pastoral</h3>
+          </div>
+          <div class="leadership-grid">
+            <LeadershipCard v-for="member in pastoralCollege" :key="member.id" :member="member" />
+          </div>
+        </div>
+
+        <div class="leadership-group">
+          <div class="leadership-group-heading">
+            <span class="eyebrow">SUIVI SPIRITUEL & VIE COMMUNAUTAIRE</span>
+            <h3>L’équipe pastorale</h3>
+          </div>
+          <div class="leadership-grid">
+            <LeadershipCard v-for="member in pastoralTeam" :key="member.id" :member="member" />
+          </div>
+        </div>
+
+        <div class="leadership-group">
+          <div class="leadership-group-heading">
+            <span class="eyebrow">ENGAGEMENT & SERVICE</span>
+            <h3>Les collaborateurs</h3>
+          </div>
+          <div class="leadership-grid">
+            <LeadershipCard v-for="member in collaborators" :key="member.id" :member="member" />
+          </div>
+        </div>
+
+        <p class="leadership-note"><i class="pi pi-info-circle" /> Les fonctions présentées constituent une proposition de structuration éditoriale. Les portraits des équipes sont illustratifs et devront être remplacés par les photos officielles après validation des responsables.</p>
       </div>
     </section>
 

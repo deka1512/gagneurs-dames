@@ -26,6 +26,19 @@ useSeoMeta({ title: 'Prédications | Gagneurs d’Âmes', description: 'Messages
       </div>
     </section>
 
+    <section class="section section-soft sermon-channel-section">
+      <div class="container sermon-channel-inner">
+        <div>
+          <span class="eyebrow">LES MESSAGES EN VIDÉO</span>
+          <h2>Retrouvez les prédications sur YouTube.</h2>
+          <p>Accédez à la chaîne du Révérend Beni H. Kalala pour retrouver les messages et enseignements publiés en ligne.</p>
+        </div>
+        <a href="https://www.youtube.com/@BeniHamuli" target="_blank" rel="noopener noreferrer" class="button button-primary">
+          Voir la chaîne YouTube <i class="pi pi-youtube" />
+        </a>
+      </div>
+    </section>
+
     <section class="section">
       <div class="container">
         <div class="listing-intro">
@@ -40,7 +53,9 @@ useSeoMeta({ title: 'Prédications | Gagneurs d’Âmes', description: 'Messages
               <span class="card-meta">{{ dateLabel(item.date) }} <template v-if="item.demo"> · {{ item.reference }}</template></span>
               <h3>{{ item.title }}</h3>
               <p>{{ item.excerpt }}</p>
-              <span v-if="item.demo" class="sermon-speaker">{{ item.speaker }}</span>
+              <a v-if="item.demo" href="https://www.youtube.com/@BeniHamuli" target="_blank" rel="noopener noreferrer" class="text-link">
+                Voir les prédications sur YouTube <i class="pi pi-youtube" />
+              </a>
               <NuxtLink v-else :to="'/predications/' + item.slug" class="text-link">Lire l'enseignement <i class="pi pi-arrow-up-right" /></NuxtLink>
             </div>
             <div class="sermon-action"><i class="pi pi-book-open" /></div>

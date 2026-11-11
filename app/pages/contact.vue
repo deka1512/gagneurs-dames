@@ -1,8 +1,11 @@
 <script setup lang="ts">
 useSeoMeta({
   title: 'Contact | Gagneurs d’Âmes',
-  description: 'Contactez la Communauté les Gagneurs d’Âmes à Kinshasa ou planifiez une rencontre.',
+  description: 'Retrouvez la Communauté les Gagneurs d’Âmes à Bandalungwa, Kinshasa, et suivez ses prédications en ligne.'
 })
+
+const address = 'Avenue Kisangani, n° 31 Bis, quartier Makelele, commune de Bandalungwa, référence Virage Assolongo, Kinshasa, République démocratique du Congo'
+const mapUrl = 'https://www.google.com/maps/search/?api=1&query=Avenue%20Kisangani%20n%C2%B031%20Bis%2C%20Makelele%2C%20Bandalungwa%2C%20Kinshasa%2C%20RDC'
 </script>
 
 <template>
@@ -11,40 +14,48 @@ useSeoMeta({
       <div class="container">
         <span class="eyebrow eyebrow-light">RESTONS EN CONTACT</span>
         <h1>Nous serions heureux<br><em>de vous rencontrer.</em></h1>
-        <p>Une question, une prière ou simplement envie de découvrir notre communauté ? Notre équipe sera heureuse de vous écouter.</p>
+        <p>Vous souhaitez nous rendre visite, découvrir notre communauté ou suivre nos enseignements ? Retrouvez ici nos coordonnées et nos espaces en ligne.</p>
       </div>
     </section>
 
     <section class="section">
       <div class="container contact-grid">
         <div>
-          <span class="eyebrow">PRENONS CONTACT</span>
-          <h2>Nous sommes à votre écoute.</h2>
-          <p>Vous pouvez nous écrire, nous appeler ou organiser une première visite. Les coordonnées ci-dessous sont des exemples de démonstration.</p>
+          <span class="eyebrow">NOTRE ADRESSE</span>
+          <h2>Retrouvons-nous à Bandalungwa.</h2>
+          <p>La Communauté les Gagneurs d’Âmes vous accueille à Kinshasa. Utilisez l’itinéraire pour retrouver notre lieu de rassemblement.</p>
 
           <div class="contact-detail">
             <i class="pi pi-map-marker" />
-            <div><strong>Adresse</strong><span>Commune de Limete, Kinshasa<br>République démocratique du Congo</span></div>
+            <div><strong>Adresse</strong><span>{{ address }}</span></div>
           </div>
-          <div class="contact-detail">
-            <i class="pi pi-phone" />
-            <div><strong>Téléphone</strong><a href="tel:+243000000000">+243 000 000 000</a></div>
+          <a :href="mapUrl" target="_blank" rel="noopener noreferrer" class="button button-primary contact-map-button">
+            Voir l’itinéraire <i class="pi pi-directions" />
+          </a>
+
+          <div class="contact-social-list">
+            <a href="https://web.facebook.com/benihkalala?locale=fr_FR" target="_blank" rel="noopener noreferrer" class="contact-social-link">
+              <i class="pi pi-facebook" />
+              <span><strong>Facebook</strong><small>Suivre les nouvelles de la communauté</small></span>
+              <i class="pi pi-arrow-up-right" />
+            </a>
+            <a href="https://www.youtube.com/@BeniHamuli" target="_blank" rel="noopener noreferrer" class="contact-social-link">
+              <i class="pi pi-youtube" />
+              <span><strong>YouTube</strong><small>Retrouver les prédications et enseignements</small></span>
+              <i class="pi pi-arrow-up-right" />
+            </a>
           </div>
-          <div class="contact-detail">
-            <i class="pi pi-envelope" />
-            <div><strong>E-mail</strong><a href="mailto:contact@gagneursdames.example">contact@gagneursdames.example</a></div>
-          </div>
-          <div class="editorial-note"><i class="pi pi-info-circle" /> Adresse, numéro et e-mail fictifs : à remplacer par les coordonnées officielles.</div>
         </div>
 
         <aside class="contact-panel">
-          <span class="eyebrow">HORAIRES INDICATIFS</span>
-          <h3>Nos rencontres</h3>
-          <div class="contact-hours"><span>Dimanche · Culte</span><strong>09h00 – 11h00</strong></div>
-          <div class="contact-hours"><span>Mercredi · Étude biblique</span><strong>17h30 – 19h00</strong></div>
-          <div class="contact-hours"><span>Vendredi · Prière</span><strong>17h30 – 19h00</strong></div>
-          <p>Pour une première visite ou un entretien, contactez-nous afin que nous puissions vous orienter.</p>
-          <NuxtLink to="/rendez-vous" class="button button-primary">Demander un rendez-vous <i class="pi pi-arrow-up-right" /></NuxtLink>
+          <span class="eyebrow">EN LIGNE</span>
+          <h3>Restons connectés.</h3>
+          <p>Les enseignements et les publications permettent de garder le lien avec la communauté, même à distance.</p>
+          <div class="contact-hours"><span>Prédications</span><strong>Chaîne YouTube</strong></div>
+          <div class="contact-hours"><span>Informations</span><strong>Page Facebook</strong></div>
+          <a href="https://www.youtube.com/@BeniHamuli" target="_blank" rel="noopener noreferrer" class="button button-primary">
+            Voir les prédications <i class="pi pi-youtube" />
+          </a>
         </aside>
       </div>
     </section>
