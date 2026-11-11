@@ -31,6 +31,7 @@ useSeoMeta({
 <template>
   <div class="appointment-page">
     <section class="page-hero page-hero-appointment appointment-hero">
+      <img class="page-hero-photo" src="/couple%20pastoral.jpg" alt="" aria-hidden="true" fetchpriority="high">
       <div class="container appointment-hero-content">
         <span class="eyebrow eyebrow-light">NOUS SOMMES À VOTRE ÉCOUTE</span>
         <h1>Parlons ensemble.<br><em>Vous n’êtes pas seul.</em></h1>
