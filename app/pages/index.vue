@@ -1,37 +1,15 @@
 <script setup lang="ts">
-const { getPosts } = useWordPress()
-const { data: posts } = await useAsyncData('home-posts', () => getPosts({ per_page: 3 }))
+import { articles } from '~/data/articles'
+import { leadershipPreview } from '~/data/leadership'
 
-const demoNews = [
-  {
-    slug: 'grandir-ensemble-dans-la-foi',
-    date: '2026-10-25T09:00:00',
-    title: 'Grandir ensemble dans la foi',
-    excerpt: 'Un temps de partage, de prière et d’encouragement pour avancer ensemble et fortifier notre marche avec Dieu.',
-    category: 'Vie communautaire',
-  },
-  {
-    slug: 'la-parole-au-coeur-de-nos-vies',
-    date: '2026-10-18T09:00:00',
-    title: 'La Parole au cœur de nos vies',
-    excerpt: 'Retour sur notre rencontre autour des Écritures et sur les enseignements qui nous accompagnent au quotidien.',
-    category: 'Enseignement',
-  },
-  {
-    slug: 'un-dimanche-de-communion',
-    date: '2026-10-11T09:00:00',
-    title: 'Un dimanche de communion',
-    excerpt: 'Une célébration placée sous le signe de la reconnaissance, de la fraternité et de l’espérance.',
-    category: 'Événement',
-  },
-]
-
+const featuredArticles = articles.slice(0, 3)
+const pastorPortraitFailed = ref(false)
 const dateLabel = (date: string) =>
   new Intl.DateTimeFormat('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' }).format(new Date(date))
 
 useSeoMeta({
   title: 'Accueil | Communauté les Gagneurs d’Âmes',
-  description: 'Bienvenue à la Communauté les Gagneurs d’Âmes à Kinshasa. Une foi vivante, une communion fraternelle et une mission partagée.',
+  description: 'Bienvenue à la Communauté les Gagneurs d’Âmes à Kinshasa. Une foi vivante, une communion fraternelle et une mission partagée.'
 })
 </script>
 
@@ -69,8 +47,15 @@ useSeoMeta({
     <section class="pastor-section">
       <div class="container pastor-layout">
         <div class="pastor-portrait" aria-label="Présentation du Révérend Beni H. Kalala">
-          <span class="pastor-portrait-glow" />
-          <span class="pastor-initials">BK</span>
+          <img
+            v-if="!pastorPortraitFailed"
+            class="pastor-portrait-image"
+            src="/images/benih.jpg"
+            alt="Portrait du Révérend Beni H. Kalala"
+            loading="lazy"
+            @error="pastorPortraitFailed = true"
+          >
+          <div v-else class="pastor-portrait-fallback"><span class="pastor-initials">BK</span></div>
           <span class="pastor-portrait-caption">FOI · SERVICE · MISSION</span>
         </div>
         <div class="pastor-content">
@@ -87,6 +72,22 @@ useSeoMeta({
             et prenez part à cette dynamique de foi.
           </p>
           <NuxtLink to="/eglise" class="text-link">Découvrir notre communauté <i class="pi pi-arrow-up-right" /></NuxtLink>
+        </div>
+      </div>
+    </section>
+
+    <section id="leadership-home" class="section leadership-preview-section">
+      <div class="container">
+        <SectionHeading
+          eyebrow="DES FEMMES ET DES HOMMES AU SERVICE"
+          title="Une équipe engagée pour la mission"
+          description="Le collège pastoral, l’équipe pastorale et les collaborateurs contribuent ensemble à la vie et au rayonnement de la communauté."
+        />
+        <div class="leadership-grid leadership-grid-preview">
+          <LeadershipCard v-for="member in leadershipPreview" :key="member.id" :member="member" />
+        </div>
+        <div class="section-action">
+          <NuxtLink to="/eglise#leadership" class="button button-outline">Découvrir les équipes <i class="pi pi-arrow-right" /></NuxtLink>
         </div>
       </div>
     </section>
@@ -142,28 +143,21 @@ useSeoMeta({
     <section class="section section-soft">
       <div class="container">
         <SectionHeading eyebrow="LA VIE DE LA COMMUNAUTÉ" title="Grandir, apprendre et partager" description="Retrouvez les nouvelles, les rencontres et les enseignements qui rythment la vie de notre communauté." />
-        <div v-if="posts?.length" class="card-grid">
-          <article v-for="post in posts" :key="post.id" class="content-card">
-            <div class="card-content">
-              <span class="card-meta">Actualité · {{ dateLabel(post.date) }}</span>
-              <h3>{{ post.title.rendered.replace(/<[^>]*>/g, '') }}</h3>
-              <p>{{ post.excerpt.rendered.replace(/<[^>]*>/g, '').slice(0, 150) }}</p>
-              <NuxtLink :to="'/actualites/' + post.slug" class="text-link">Lire la suite <i class="pi pi-arrow-up-right" /></NuxtLink>
+        <div class="card-grid">
+          <article v-for="item in featuredArticles" :key="item.slug" class="content-card editorial-card">
+            <div class="editorial-card-image">
+              <img :src="item.image" :alt="item.imageAlt" loading="lazy" decoding="async">
+              <span>{{ item.category }}</span>
             </div>
-          </article>
-        </div>
-        <div v-else class="card-grid">
-          <article v-for="item in demoNews" :key="item.slug" class="content-card editorial-card">
-            <div class="editorial-card-top"><span>{{ item.category }}</span><i class="pi pi-book" /></div>
             <div class="card-content">
-              <span class="card-meta">{{ dateLabel(item.date) }}</span>
+              <span class="card-meta">{{ dateLabel(item.publishedAt) }}</span>
               <h3>{{ item.title }}</h3>
               <p>{{ item.excerpt }}</p>
-              <NuxtLink to="/actualites" class="text-link">Explorer les actualités <i class="pi pi-arrow-up-right" /></NuxtLink>
+              <NuxtLink :to="'/articles/' + item.slug" class="text-link">Lire l’article <i class="pi pi-arrow-up-right" /></NuxtLink>
             </div>
           </article>
         </div>
-        <div class="section-action"><NuxtLink to="/actualites" class="button button-outline">Toutes les actualités <i class="pi pi-arrow-right" /></NuxtLink></div>
+        <div class="section-action"><NuxtLink to="/articles" class="button button-outline">Toutes les actualités <i class="pi pi-arrow-right" /></NuxtLink></div>
       </div>
     </section>
 

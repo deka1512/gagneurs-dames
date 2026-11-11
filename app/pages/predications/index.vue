@@ -26,6 +26,19 @@ useSeoMeta({ title: 'Prédications | Gagneurs d’Âmes', description: 'Messages
       </div>
     </section>
 
+    <section class="section section-soft sermon-channel-section">
+      <div class="container sermon-channel-inner">
+        <div>
+          <span class="eyebrow">LES MESSAGES EN VIDÉO</span>
+          <h2>Retrouvez les prédications sur YouTube.</h2>
+          <p>Accédez à la chaîne du Révérend Beni H. Kalala pour retrouver les messages et enseignements publiés en ligne.</p>
+        </div>
+        <a href="https://www.youtube.com/@BeniHamuli" target="_blank" rel="noopener noreferrer" class="button button-primary">
+          Voir la chaîne YouTube <i class="pi pi-youtube" />
+        </a>
+      </div>
+    </section>
+
     <section class="section">
       <div class="container">
         <div class="listing-intro">
