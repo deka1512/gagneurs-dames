@@ -503,3 +503,54 @@ a:not(.button):not(.footer-credit):hover { color: inherit !important; }
 
 /* Conserver le contraste des pictogrammes dans les liens sociaux */
 .contact-social-link > i:first-child { color: #fff !important; }
+
+
+/* Page Contact — photographie d'en-tête et titres dans la charte */
+.contact-hero {
+  min-height: 410px;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  background-image: linear-gradient(90deg, rgba(16,43,64,.94) 0%, rgba(24,59,86,.78) 58%, rgba(16,43,64,.38) 100%), url('/section%20eglise.jpg');
+  background-position: center 48%;
+  background-size: cover;
+}
+.contact-hero-content { padding-block: 76px; }
+.contact-hero h1 { max-width: 760px; margin: 18px 0; color: #fff; font-size: clamp(40px, 6vw, 68px); line-height: 1.04; }
+.contact-hero h1 em { color: #f28b83; font-style: normal; }
+.contact-hero p { max-width: 640px; color: #f0f5f8; font-size: 17px; }
+.contact-main-section { background: #fff; }
+.contact-main-copy h2 { margin: 12px 0 14px; color: var(--ga-navy); font-family: 'Urbanist', sans-serif; font-size: clamp(30px, 4vw, 42px); line-height: 1.12; }
+.contact-main-copy .contact-intro { max-width: 640px; color: var(--ga-muted); }
+.contact-detail > div > strong { color: var(--ga-navy); }
+.contact-panel { border: 1px solid var(--ga-line); border-top: 4px solid var(--ga-coral); border-radius: 14px; background: #f4f7f9; }
+.contact-panel h3 { color: var(--ga-navy); font-size: 30px; }
+.contact-panel > p { color: var(--ga-muted); }
+.contact-panel-item { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 15px 0; border-bottom: 1px solid var(--ga-line); }
+.contact-panel-item span { color: var(--ga-muted); font-size: 14px; }
+.contact-panel-item strong, .contact-panel-item a { color: var(--ga-navy) !important; font-weight: 800; }
+.contact-panel .button { width: 100%; margin-top: 13px; }
+
+/* Photographie de présentation sur la page Notre église */
+.church-photo-section { padding: 0 0 clamp(60px, 8vw, 100px); background: #fff; }
+.church-photo-image { position: relative; min-height: 390px; overflow: hidden; background: var(--ga-navy); }
+.church-photo-image:after { position: absolute; inset: 0; content: ''; background: linear-gradient(90deg, rgba(16,43,64,.88), rgba(16,43,64,.15)); }
+.church-photo-image img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 48%; }
+.church-photo-overlay { position: relative; z-index: 1; width: min(calc(100% - 48px), var(--ga-container)); margin: 0 auto; padding: 90px 0; color: #fff; }
+.church-photo-overlay h2 { margin: 14px 0 0; color: #fff; font-family: 'Urbanist', sans-serif; font-size: clamp(34px, 5vw, 54px); line-height: 1.08; }
+.church-photo-overlay h2 em { color: var(--ga-coral-soft); font-style: normal; }
+
+/* Accueil — image de vision superposée à un voile bleu */
+.vision-home-section {
+  background-image: linear-gradient(125deg, rgba(16,43,64,.94), rgba(29,76,109,.82)), url('/section%20vision.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+@media (max-width: 650px) {
+  .contact-hero { min-height: 360px; background-position: 58% center; }
+  .contact-hero-content { padding-block: 58px; }
+  .church-photo-image { min-height: 310px; }
+  .church-photo-overlay { padding-block: 66px; }
+  .contact-panel-item { align-items: flex-start; flex-direction: column; gap: 4px; }
+}
