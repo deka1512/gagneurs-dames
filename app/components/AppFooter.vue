@@ -18,7 +18,7 @@ const mapUrl = 'https://www.google.com/maps/search/?api=1&query=Avenue%20Kisanga
       <div class="container footer-grid">
         <div class="footer-about">
           <NuxtLink to="/" class="brand brand-light">
-            <img class="brand-logo" src="/logo.svg" alt="">
+            <img class="brand-logo" src="/logo.jpg" alt="">
             <span class="brand-copy">
               <strong>GAGNEURS D’ÂMES</strong>
               <small>COMMUNAUTÉ · FOI · MISSION</small>
