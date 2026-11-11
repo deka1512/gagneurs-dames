@@ -102,7 +102,7 @@ const commitments = [
           </div>
         </div>
 
-        <p class="leadership-note"><i class="pi pi-info-circle" /> Les fonctions présentées constituent une proposition de structuration éditoriale. Les portraits des équipes sont illustratifs et devront être remplacés par les photos officielles après validation des responsables.</p>
+        <p class="leadership-note"><i class="pi pi-info-circle" /> À l’exception du Révérend Beni H. Kalala, les noms, fonctions et portraits affichés sont des exemples fictifs destinés à illustrer la présentation de l’équipe. Ils devront être remplacés ou validés par l’église.</p>
       </div>
     </section>
 
