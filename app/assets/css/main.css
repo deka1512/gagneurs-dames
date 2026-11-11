@@ -480,3 +480,5 @@ a, a:hover, a:focus, .article-body a { text-decoration: none !important; }
 /* Footer layout: three content columns */
 .footer-grid { grid-template-columns: 1.45fr .8fr 1.1fr; }
 .leadership-card-copy .leadership-group { display: block; margin: 0; }
+
+.brand-light .brand-logo { filter: none; }
