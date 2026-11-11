@@ -1,7 +1,7 @@
 <script setup lang="ts">
 useSeoMeta({
-  title: 'Contact | Gagneurs d’Âmes',
-  description: 'Retrouvez la Communauté les Gagneurs d’Âmes à Bandalungwa, Kinshasa, et suivez ses prédications en ligne.'
+  title: 'Contact | Communauté les Gagneurs d’Âmes',
+  description: 'Retrouvez la Communauté les Gagneurs d’Âmes à Bandalungwa, Kinshasa, et contactez-nous.'
 })
 
 const address = 'Avenue Kisangani, n° 31 Bis, quartier Makelele, commune de Bandalungwa, référence Virage Assolongo, Kinshasa, République démocratique du Congo'
@@ -10,25 +10,25 @@ const mapUrl = 'https://www.google.com/maps/search/?api=1&query=Avenue%20Kisanga
 </script>
 
 <template>
-  <div>
-    <section class="page-hero">
-      <div class="container">
+  <div class="contact-page">
+    <section class="page-hero contact-hero">
+      <div class="container contact-hero-content">
         <span class="eyebrow eyebrow-light">RESTONS EN CONTACT</span>
         <h1>Nous serions heureux<br><em>de vous rencontrer.</em></h1>
-        <p>Vous souhaitez nous rendre visite, découvrir notre communauté ou suivre nos enseignements ? Retrouvez ici nos coordonnées et nos espaces en ligne.</p>
+        <p>Une question, un besoin de prière ou l’envie de nous rendre visite ? Nous sommes heureux de pouvoir échanger avec vous.</p>
       </div>
     </section>
 
-    <section class="section">
+    <section class="section contact-main-section">
       <div class="container contact-grid">
-        <div>
-          <span class="eyebrow">NOTRE ADRESSE</span>
+        <div class="contact-main-copy">
+          <span class="eyebrow">NOS COORDONNÉES</span>
           <h2>Retrouvons-nous à Bandalungwa.</h2>
-          <p>La Communauté les Gagneurs d’Âmes vous accueille à Kinshasa. Utilisez l’itinéraire pour retrouver notre lieu de rassemblement.</p>
+          <p class="contact-intro">La Communauté les Gagneurs d’Âmes vous accueille à Kinshasa. Retrouvez ci-dessous notre adresse et nos moyens de contact.</p>
 
           <div class="contact-detail">
             <i class="pi pi-map-marker" />
-            <div><strong>Adresse</strong><span>{{ address }}</span></div>
+            <div><strong>Notre adresse</strong><span>{{ address }}</span></div>
           </div>
           <div class="contact-detail">
             <i class="pi pi-phone" />
@@ -53,13 +53,14 @@ const mapUrl = 'https://www.google.com/maps/search/?api=1&query=Avenue%20Kisanga
         </div>
 
         <aside class="contact-panel">
-          <span class="eyebrow">EN LIGNE</span>
-          <h3>Restons connectés.</h3>
-          <p>Les enseignements et les publications permettent de garder le lien avec la communauté, même à distance.</p>
-          <div class="contact-hours"><span>Prédications</span><strong>Chaîne YouTube</strong></div>
-          <div class="contact-hours"><span>Informations</span><strong>Page Facebook</strong></div>
-          <a href="tel:0812356892" class="button button-primary"><i class="pi pi-phone" /> Appeler le 081 235 68 92</a>
-          <a href="https://www.youtube.com/@BeniHamuli" target="_blank" rel="noopener noreferrer" class="button button-primary">
+          <span class="eyebrow">NOUS VOUS ÉCOUTONS</span>
+          <h3>Votre message compte.</h3>
+          <p>Vous souhaitez demander une prière, poser une question ou organiser une rencontre ? Appelez-nous ou retrouvez-nous sur nos plateformes.</p>
+          <div class="contact-panel-item"><span>Appel téléphonique</span><a href="tel:0812356892">081 235 68 92</a></div>
+          <div class="contact-panel-item"><span>Prédications</span><strong>Chaîne YouTube</strong></div>
+          <div class="contact-panel-item"><span>Informations</span><strong>Page Facebook</strong></div>
+          <a href="tel:0812356892" class="button button-primary"><i class="pi pi-phone" /> Nous appeler</a>
+          <a href="https://www.youtube.com/@BeniHamuli" target="_blank" rel="noopener noreferrer" class="button button-outline">
             Voir les prédications <i class="pi pi-youtube" />
           </a>
         </aside>
