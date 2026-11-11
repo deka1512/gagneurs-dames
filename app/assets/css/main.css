@@ -822,3 +822,53 @@ a:not(.button):not(.footer-credit):hover { color: inherit !important; }
     padding-block: 58px;
   }
 }
+
+
+/* Espacement du contenu des héros : Église, Prédications et Actualités */
+.page-hero-church .page-hero-content,
+.page-hero-sermons .page-hero-content,
+.page-hero-news .page-hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.page-hero-church .page-hero-content > .eyebrow,
+.page-hero-sermons .page-hero-content > .eyebrow,
+.page-hero-news .page-hero-content > .eyebrow {
+  margin-bottom: 18px;
+}
+
+.page-hero-church .page-hero-content h1,
+.page-hero-sermons .page-hero-content h1,
+.page-hero-news .page-hero-content h1 {
+  margin: 0 0 20px;
+}
+
+.page-hero-church .page-hero-content > p,
+.page-hero-sermons .page-hero-content > p,
+.page-hero-news .page-hero-content > p {
+  margin: 0;
+}
+
+.page-hero-church .page-hero-links {
+  margin-top: 30px;
+}
+
+@media (max-width: 650px) {
+  .page-hero-church .page-hero-content > .eyebrow,
+  .page-hero-sermons .page-hero-content > .eyebrow,
+  .page-hero-news .page-hero-content > .eyebrow {
+    margin-bottom: 14px;
+  }
+
+  .page-hero-church .page-hero-content h1,
+  .page-hero-sermons .page-hero-content h1,
+  .page-hero-news .page-hero-content h1 {
+    margin-bottom: 16px;
+  }
+
+  .page-hero-church .page-hero-links {
+    margin-top: 24px;
+  }
+}
