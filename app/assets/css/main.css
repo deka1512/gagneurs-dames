@@ -772,3 +772,28 @@ a:not(.button):not(.footer-credit):hover { color: inherit !important; }
   .page-hero.contact-hero,
   .page-hero.appointment-hero { min-height: 410px; }
 }
+
+
+/* Afficher chaque photo en entier, sans recadrage : la même photo remplit
+   l'arrière-plan en douceur, tandis que sa version nette reste intégrale. */
+.page-hero::before {
+  z-index: -2;
+  filter: blur(16px) brightness(.62);
+  transform: scale(1.06);
+}
+.page-hero-photo {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+.page-hero::after { z-index: 0; }
+.page-hero-content,
+.page-hero.contact-hero .contact-hero-content,
+.page-hero.appointment-hero .appointment-hero-content {
+  z-index: 1;
+}
