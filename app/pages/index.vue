@@ -157,7 +157,7 @@ useSeoMeta({
             </div>
           </article>
         </div>
-        <div class="section-action"><NuxtLink to="/articles" class="button button-outline">Toutes les actualités <i class="pi pi-arrow-right" /></NuxtLink></div>
+        <div class="section-action"><NuxtLink to="/articles" class="button button-outline">Tous les articles <i class="pi pi-arrow-right" /></NuxtLink></div>
       </div>
     </section>
 
