@@ -567,8 +567,19 @@ a:not(.button):not(.footer-credit):hover { color: inherit !important; }
 .contact-hero::after,
 .appointment-hero::after {
   z-index: 0;
-  background: linear-gradient(90deg, rgba(10, 31, 47, .96) 0%, rgba(16, 43, 64, .86) 43%, rgba(16, 43, 64, .22) 100%);
   pointer-events: none;
+}
+.contact-hero::after {
+  background:
+    linear-gradient(90deg, rgba(9, 29, 44, .97) 0%, rgba(12, 39, 58, .91) 33%, rgba(12, 39, 58, .62) 57%, rgba(12, 39, 58, .10) 100%),
+    linear-gradient(0deg, rgba(9, 29, 44, .42) 0%, transparent 56%),
+    linear-gradient(180deg, rgba(9, 29, 44, .16) 0%, transparent 30%);
+}
+.appointment-hero::after {
+  background:
+    linear-gradient(90deg, rgba(9, 29, 44, .97) 0%, rgba(12, 39, 58, .90) 35%, rgba(12, 39, 58, .56) 59%, rgba(12, 39, 58, .08) 100%),
+    linear-gradient(0deg, rgba(9, 29, 44, .38) 0%, transparent 58%),
+    linear-gradient(180deg, rgba(9, 29, 44, .12) 0%, transparent 32%);
 }
 .contact-hero-visual,
 .appointment-hero-visual {
@@ -576,7 +587,7 @@ a:not(.button):not(.footer-credit):hover { color: inherit !important; }
   z-index: -1;
   top: 0;
   right: 0;
-  width: min(59%, 850px);
+  width: min(64%, 900px);
   height: 100%;
   overflow: hidden;
 }
@@ -586,9 +597,10 @@ a:not(.button):not(.footer-credit):hover { color: inherit !important; }
   height: 100%;
   display: block;
   object-fit: cover;
-  object-position: center 42%;
   transform: scale(1.015);
 }
+.contact-hero-visual img { object-position: center 48%; }
+.appointment-hero-visual img { object-position: center 43%; }
 .contact-hero-content,
 .appointment-hero-content {
   position: relative;
@@ -672,9 +684,15 @@ a:not(.button):not(.footer-credit):hover { color: inherit !important; }
 @media (max-width: 650px) {
   .contact-hero-visual,
   .appointment-hero-visual { width: 100%; }
-  .contact-hero::after,
+  .contact-hero::after {
+    background:
+      linear-gradient(90deg, rgba(9,29,44,.91) 0%, rgba(12,39,58,.76) 55%, rgba(12,39,58,.36) 100%),
+      linear-gradient(0deg, rgba(9,29,44,.50), transparent 70%);
+  }
   .appointment-hero::after {
-    background: linear-gradient(90deg, rgba(10,31,47,.91), rgba(16,43,64,.72)), linear-gradient(0deg, rgba(10,31,47,.32), transparent);
+    background:
+      linear-gradient(90deg, rgba(9,29,44,.93) 0%, rgba(12,39,58,.78) 55%, rgba(12,39,58,.38) 100%),
+      linear-gradient(0deg, rgba(9,29,44,.48), transparent 70%);
   }
   .appointment-hero { min-height: 390px; padding-block: 45px; }
   .appointment-hero p { font-size: 15px; }
