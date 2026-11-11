@@ -50,6 +50,16 @@ const commitments = [
       </div>
     </section>
 
+    <section class="church-photo-section" aria-label="La vie de la communauté">
+      <div class="church-photo-image">
+        <img src="/section%20eglise.jpg" alt="Photographie illustrant la vie et les rassemblements de la communauté" loading="lazy">
+        <div class="church-photo-overlay">
+          <span class="eyebrow eyebrow-light">UNE COMMUNAUTÉ ENSEMBLE</span>
+          <h2>Grandir dans la foi.<br><em>Avancer ensemble.</em></h2>
+        </div>
+      </div>
+    </section>
+
     <section class="section section-soft">
       <div class="container">
         <SectionHeading eyebrow="CE QUI NOUS ANIME" title="Nos convictions au quotidien" description="Des repères simples qui inspirent notre manière de vivre la foi et de prendre soin les uns des autres." />
