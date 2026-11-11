@@ -5,7 +5,7 @@ const route = useRoute()
 const article = articles.find(item => item.slug === String(route.params.slug))
 
 if (!article) {
-  throw createError({ statusCode: 404, statusMessage: 'Article introuvable' })
+  throw createError({ statusCode: 404, statusMessage: 'Publication introuvable' })
 }
 
 const dateLabel = new Intl.DateTimeFormat('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' }).format(new Date(article.publishedAt))
@@ -22,7 +22,7 @@ useSeoMeta({
 <template>
   <article class="section article-detail-section">
     <div class="container article-detail-container">
-      <NuxtLink to="/articles" class="text-link article-back"><i class="pi pi-arrow-left" /> Tous les articles</NuxtLink>
+      <NuxtLink to="/articles" class="text-link article-back"><i class="pi pi-arrow-left" /> Toutes les actualités</NuxtLink>
       <div class="article-detail-heading">
         <span class="eyebrow">{{ article.category }}</span>
         <h1>{{ article.title }}</h1>
@@ -37,7 +37,7 @@ useSeoMeta({
         </section>
       </div>
       <div class="article-detail-footer">
-        <NuxtLink to="/articles" class="button button-outline"><i class="pi pi-arrow-left" /> Retour aux articles</NuxtLink>
+        <NuxtLink to="/articles" class="button button-outline"><i class="pi pi-arrow-left" /> Retour aux actualités</NuxtLink>
         <a href="https://www.youtube.com/@BeniHamuli" target="_blank" rel="noopener noreferrer" class="button button-primary">
           Découvrir les prédications <i class="pi pi-youtube" />
         </a>

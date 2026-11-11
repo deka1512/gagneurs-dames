@@ -6,7 +6,7 @@ const links = [
   { label: 'Accueil', to: '/' },
   { label: 'Notre église', to: '/eglise' },
   { label: 'Prédications', to: '/predications' },
-  { label: 'Articles', to: '/articles' },
+  { label: 'Actualités', to: '/articles' },
   { label: 'Contact', to: '/contact' },
 ]
 
@@ -31,6 +31,7 @@ onBeforeUnmount(() => window.removeEventListener('keydown', closeOnEscape))
       <div class="container topbar-inner">
         <span><i class="pi pi-map-marker" /> Avenue Kisangani n°31 Bis · Bandalungwa, Kinshasa</span>
         <div class="topbar-details">
+          <a href="tel:0812356892"><i class="pi pi-phone" /> 081 235 68 92</a>
           <a href="https://www.youtube.com/@BeniHamuli" target="_blank" rel="noopener noreferrer"><i class="pi pi-youtube" /> Prédications</a>
           <a href="https://web.facebook.com/benihkalala?locale=fr_FR" target="_blank" rel="noopener noreferrer"><i class="pi pi-facebook" /> Facebook</a>
         </div>
@@ -78,6 +79,7 @@ onBeforeUnmount(() => window.removeEventListener('keydown', closeOnEscape))
         </NuxtLink>
         <div class="mobile-nav-info">
           <span><i class="pi pi-map-marker" /> Kinshasa · Bandalungwa</span>
+          <a href="tel:0812356892"><i class="pi pi-phone" /> 081 235 68 92</a>
           <a href="https://www.youtube.com/@BeniHamuli" target="_blank" rel="noopener noreferrer"><i class="pi pi-youtube" /> Chaîne YouTube</a>
         </div>
       </nav>

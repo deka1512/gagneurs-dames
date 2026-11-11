@@ -489,3 +489,17 @@ a, a:hover, a:focus, .article-body a { text-decoration: none !important; }
 @media (max-width: 600px) {
   .footer-grid { grid-template-columns: 1fr; }
 }
+
+
+/* Liens éditoriaux neutres : la couleur reste portée par les boutons et les icônes */
+a:not(.button):not(.footer-credit) { color: inherit !important; }
+a:not(.button):not(.footer-credit):hover { color: inherit !important; }
+.topbar-details { flex-wrap: wrap; }
+.topbar-details a { white-space: nowrap; }
+@media (max-width: 760px) {
+  .topbar-inner { align-items: flex-start; flex-direction: column; gap: 7px; padding-block: 9px; }
+  .topbar-details { gap: 10px 16px; }
+}
+
+/* Conserver le contraste des pictogrammes dans les liens sociaux */
+.contact-social-link > i:first-child { color: #fff !important; }
