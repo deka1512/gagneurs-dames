@@ -22,7 +22,7 @@ useSeoMeta({ title: 'Actualités | Gagneurs d’Âmes', description: 'Les nouvel
 <template>
   <div>
     <section class="page-hero page-hero-news">
-      <img class="page-hero-photo" src="/bg%201.jpg" alt="" aria-hidden="true" fetchpriority="high">
+      <img class="page-hero-photo" src="/chuch.jpg" alt="" aria-hidden="true" fetchpriority="high">
       <div class="container page-hero-content">
         <span class="eyebrow eyebrow-light">LA VIE DE LA COMMUNAUTÉ</span>
         <h1>Des nouvelles qui<br><em>nous rapprochent.</em></h1>
