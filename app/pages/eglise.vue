@@ -23,7 +23,7 @@ const commitments = [
 <template>
   <div>
     <section class="page-hero page-hero-church">
-      <div class="container page-hero-content">
+      <div class="container hero-content ">
         <span class="eyebrow eyebrow-light">QUI SOMMES-NOUS ?</span>
         <h1>Une communauté.<br><em>Une foi, une mission.</em></h1>
         <p>Unis par la foi en Jésus-Christ, nous voulons être une communauté qui accueille, qui édifie et qui sert.</p>

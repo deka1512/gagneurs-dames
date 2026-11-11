@@ -15,7 +15,7 @@ useSeoMeta({
   <div>
     <section class="page-hero page-hero-articles">
       <img class="page-hero-photo" src="/responsable%20louange.jpg" alt="" aria-hidden="true" fetchpriority="high">
-      <div class="container page-hero-content">
+      <div class="container hero-content">
         <span class="eyebrow eyebrow-light">ACTUALITÉS & RÉFLEXIONS</span>
         <h1>Des paroles pour<br><em>nourrir la foi.</em></h1>
         <p>Des réflexions, des repères bibliques et des ressources pour avancer dans la foi et vivre l’Évangile au quotidien.</p>

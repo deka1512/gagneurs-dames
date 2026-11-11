@@ -20,7 +20,7 @@ useSeoMeta({ title: 'Prédications | Gagneurs d’Âmes', description: 'Messages
   <div>
     <section class="page-hero page-hero-sermons">
       <img class="page-hero-photo" src="/section%20predication.jpg" alt="" aria-hidden="true" fetchpriority="high">
-      <div class="container page-hero-content">
+      <div class="container hero-content">
         <span class="eyebrow eyebrow-light">ENSEIGNEMENTS & MÉDITATIONS</span>
         <h1>Nourrir sa foi.<br><em>Vivre la Parole.</em></h1>
         <p>Des enseignements pour réfléchir, grandir spirituellement et mettre la Parole en pratique chaque jour.</p>
