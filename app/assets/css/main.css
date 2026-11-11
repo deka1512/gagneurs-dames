@@ -500,3 +500,6 @@ a:not(.button):not(.footer-credit):hover { color: inherit !important; }
   .topbar-inner { align-items: flex-start; flex-direction: column; gap: 7px; padding-block: 9px; }
   .topbar-details { gap: 10px 16px; }
 }
+
+/* Conserver le contraste des pictogrammes dans les liens sociaux */
+.contact-social-link > i:first-child { color: #fff !important; }
