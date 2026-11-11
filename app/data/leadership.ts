@@ -30,4 +30,4 @@ export const collaborators: LeadershipMember[] = [
   { id: 'solidarite', name: 'Action sociale & solidarité', title: 'Équipe de solidarité', group: 'Collaborateurs', description: 'Identifier les besoins et organiser des actions d’entraide au bénéfice des personnes.', image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=600&q=85', imageAlt: 'Portrait illustratif', initials: 'AS' }
 ]
 
-export const leadershipPreview = [pastoralCollege[0], pastoralCollege[1], pastoralTeam[0], collaborators[0]]
+export const leadershipPreview = [pastoralCollege[0]!, pastoralCollege[1]!, pastoralTeam[0]!, collaborators[0]!]
