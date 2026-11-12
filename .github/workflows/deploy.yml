@@ -49,6 +49,7 @@ jobs:
         run: |
           mkdir -p deploy/.output deploy/tmp
           cp -a .output/. deploy/.output/
+          cp package.json package-lock.json deploy/
           printf "import('./.output/server/index.mjs').catch((error) => { console.error(error); process.exit(1) })\n" > deploy/server.js
           date -u +"%Y-%m-%dT%H:%M:%SZ" > deploy/tmp/restart.txt
           echo "Deployment package:"
